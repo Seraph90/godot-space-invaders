@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddwjxf72q7004"]
+
+[ext_resource type="Script" path="res://ui/hud/hud.gd" id="1_a8dxd"]
+[ext_resource type="FontFile" uid="uid://dy0w61q3bbxhw" path="res://assets/fonts/INVASION2000.TTF" id="2_7muo1"]
+[ext_resource type="PackedScene" uid="uid://0gukfufxpsb2" path="res://ui/hud/lives/lives.tscn" id="3_h2vib"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_a8dxd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.796078, 0.819608, 0.745098, 1)
+theme_override_fonts/font = ExtResource("2_7muo1")
+text = "0"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Lives" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_h2vib")]
+layout_mode = 2

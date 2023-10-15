@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0gukfufxpsb2"]
+
+[ext_resource type="Script" path="res://ui/hud/lives/lives.gd" id="1_o0f2j"]
+
+[node name="Lives" type="HBoxContainer"]
+script = ExtResource("1_o0f2j")

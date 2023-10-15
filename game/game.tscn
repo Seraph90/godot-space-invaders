@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7xitin67bq2"]
+
+[ext_resource type="PackedScene" uid="uid://sy4t6dfs7utn" path="res://ui/background/background.tscn" id="1_5axag"]
+[ext_resource type="Script" path="res://game/game.gd" id="1_qolv4"]
+[ext_resource type="PackedScene" uid="uid://ddwjxf72q7004" path="res://ui/hud/hud.tscn" id="2_ek6ug"]
+[ext_resource type="PackedScene" uid="uid://dav3my1pdc574" path="res://elements/spaceship/spaceship.tscn" id="2_qmtj4"]
+[ext_resource type="PackedScene" uid="uid://b84mckcdkdkxe" path="res://elements/wall/wall.tscn" id="3_q524o"]
+[ext_resource type="PackedScene" uid="uid://dtc8igocoptgt" path="res://elements/enemy_group/enemy_group.tscn" id="6_vdqg1"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_qolv4")
+
+[node name="HUD" parent="." instance=ExtResource("2_ek6ug")]
+
+[node name="Background" parent="." instance=ExtResource("1_5axag")]
+
+[node name="Spaceship" parent="." instance=ExtResource("2_qmtj4")]
+position = Vector2(128, 220)
+
+[node name="WallLeft" parent="." instance=ExtResource("3_q524o")]
+
+[node name="WallRight" parent="." instance=ExtResource("3_q524o")]
+position = Vector2(256, 0)
+
+[node name="EnemyGroup" parent="." instance=ExtResource("6_vdqg1")]

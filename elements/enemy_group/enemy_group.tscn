@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtc8igocoptgt"]
+
+[ext_resource type="Script" path="res://elements/enemy_group/enemy_group.gd" id="1_708ay"]
+
+[node name="EnemyGroup" type="Node2D" groups=["enemy_group"]]
+script = ExtResource("1_708ay")
+
+[node name="BlockTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="ShotTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bft6s1x3tl4hm"]
+
+[sub_resource type="Gradient" id="Gradient_145cc"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8rr0u"]
+gradient = SubResource("Gradient_145cc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_038vi"]
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+color_ramp = SubResource("GradientTexture1D_8rr0u")
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 0.0
+
+[node name="Boom" type="GPUParticles2D"]
+modulate = Color(0.878431, 0.643137, 0.431373, 1)
+position = Vector2(1, 0)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_038vi")
+lifetime = 0.5

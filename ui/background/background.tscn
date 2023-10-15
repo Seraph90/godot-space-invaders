@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://sy4t6dfs7utn"]
+
+[ext_resource type="Script" path="res://ui/background/background.gd" id="1_k6cjb"]
+[ext_resource type="Texture2D" uid="uid://dbtiiajka0vda" path="res://assets/Background.png" id="2_x06a6"]
+[ext_resource type="Texture2D" uid="uid://cwnov1gsq3tlc" path="res://assets/other/Stars.png" id="3_wdl2u"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_k6cjb")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(128, 120)
+texture = ExtResource("2_x06a6")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 240)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(128, 120)
+motion_mirroring = Vector2(0, 480)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(1, 1, 1, 0.501961)
+texture_repeat = 2
+texture = ExtResource("3_wdl2u")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 480)
